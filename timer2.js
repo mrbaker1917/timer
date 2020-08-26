@@ -9,6 +9,7 @@ stdin.on('data', (key) => {
     process.stdout.write('\x07');
   } else if (typeof parseInt(key) === 'number') {
     let num = parseInt(key);
+    console.log(`Setting timer for ${num} seconds!`);
     let time = num * 1000;
     setTimeout(() => {
       process.stdout.write('\x07');
@@ -18,7 +19,7 @@ stdin.on('data', (key) => {
   }
 
   if (key === '\u0003') {
-    console.log("Thank you for trying my timer!");
+    console.log("Thanks for using me, ciao!");
     process.exit();
   }
 });
